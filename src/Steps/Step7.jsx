@@ -5,6 +5,7 @@ import { MenuItem, Grid, Button } from "@mui/material";
 import React, { useContext, useEffect, useRef } from "react";
 import { aboutus, FamilyIncome, months, TutionFee, years } from "../Data/Data";
 import { FormContext } from "../Data/FormContext";
+import axios from "axios";
 
 export const Step7 = ({ data, handleSubmit }) => {
   const { form, setForm, handleSubmit2 } = useContext(FormContext);
@@ -19,6 +20,28 @@ export const Step7 = ({ data, handleSubmit }) => {
     console.log("useEfferct", formRef.current);
     handleSubmit2(formRef);
   }, [formRef.current?.values]);
+
+  async function otpHandler() {
+    console.log("first");
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    // set 10 digit number in body
+    const body = {
+      mobilenumber: "7207486170",
+    };
+    try {
+      const response = axios.get(`http://127.0.0.1:8000/api/otp`, {
+        headers,
+        params: body,
+      });
+
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div className="form7">
       <Formik
@@ -85,7 +108,7 @@ export const Step7 = ({ data, handleSubmit }) => {
                   label="PhoneNumber"
                   //variant="standard"
                 ></Field>
-                <Button variant="contained" sx={{ m: 2 }}>
+                <Button variant="contained" sx={{ m: 2 }} onClick={otpHandler}>
                   send otp
                 </Button>
                 <Field
@@ -129,8 +152,8 @@ export const Step7 = ({ data, handleSubmit }) => {
                   component={Select}
                   name="Aboutus"
                   labelId="age-simple"
-                 // label="About us"
-                 // //variant="standard"
+                  // label="About us"
+                  // //variant="standard"
                   disabled={false}
                 >
                   {aboutus.map((about) => (
@@ -153,11 +176,7 @@ export const Step7 = ({ data, handleSubmit }) => {
                   // //variant="standard"
                 ></Field>
               </Grid>
-              <Grid
-                item
-                textAlign={"center"}
-                sx={{ width: "100%" }}
-              >
+              <Grid item textAlign={"center"} sx={{ width: "100%" }}>
                 <Button variant="contained" type="submit">
                   submit
                 </Button>
