@@ -73,8 +73,13 @@ export const Step2x = ({ data, handleSubmit }) => {
           <Form>
             <Stack spacing={2} m={"auto"}>
               <h3>Select your level to pursue</h3>
-              <Grid container spacing={2} justifyContent="space-between" direction="row">
-                <Grid item xs={6} md={3} >
+              <Grid
+                container
+                spacing={2}
+                justifyContent="space-between"
+                direction="row"
+              >
+                <Grid item xs={6} md={3}>
                   <Card
                     sx={{ width: "100px", margin: "auto" }}
                     onClick={() => HandleClick2("Masters")}
@@ -134,89 +139,93 @@ export const Step2x = ({ data, handleSubmit }) => {
                   name="picked"
                 ></ErrorMessage>
               </Box> */}
-              <h4>Choose desired {form.picked} course</h4>
               {values.picked && (
-                <Field
-                  component={Select}
-                  disabled={false}
-                  //formControl={{ FormControl }}
-                  formHelperText={{
-                    children: "Please select your desired Course",
-                  }}
-                  id="age"
-                  name="Degreecourse"
-                  labelId="age-simple"
-                  label="Course"
-                  //   variant="standard"
-                  onChange={(e) => {
-                    handleChange2(e, setFieldValue, submitForm);
-                  }}
-                  // onChange={e => {
-                  //    // e.persist();
-                  //     setFieldValue('value', e.target.value, false); // last argument prevents validation from running
-                  //     submitForm();
-                  //   }}
-                  //onChange={() => HandleChange(isValid,dirty)}
-                >
-                  {/* <MenuItem value="">Select</MenuItem> */}
-                  <MenuItem value="COMPUTER SCIENCE">COMPUTER SCIENCE</MenuItem>
-                  <MenuItem value="DATA SCIENCE">DATA SCIENCE</MenuItem>
-                  <MenuItem value="CYBER SECURITY">CYBER SECURITY</MenuItem>
-                  <MenuItem value="SOFTWARE ENGINEERING">
-                    SOFTWARE ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="ARTIFICIAL INTEELIGENCE">
-                    ARTIFICIAL INTEELIGENCE
-                  </MenuItem>
-                  <MenuItem value="INFORMATION SYSTEMS">
-                    INFORMATION SYSTEMS
-                  </MenuItem>
-                  <MenuItem value="COMPUTER ENGINEERING">
-                    COMPUTER ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="ELECTRICAL ENGINEERING">
-                    ELECTRICAL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="MECHANICAL ENGINEERING">
-                    MECHANICAL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="INDUSTRIAL ENGINEERING">
-                    INDUSTRIAL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="ENGINEERING MANAGEMENT">
-                    ENGINEERING MANAGEMENT
-                  </MenuItem>
-                  <MenuItem value="CIVIL ENGINEERING">
-                    CIVIL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="CONSTRUCTION MANAGEMENT">
-                    CONSTRUCTION MANAGEMENT
-                  </MenuItem>
-                  <MenuItem value="BIOMEDICAL ENGINEERING">
-                    BIOMEDICAL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="HEALTH INFORMATICS/ PUBLIC HEALTH">
-                    HEALTH INFORMATICS/ PUBLIC HEALTH
-                  </MenuItem>
-                  <MenuItem value="AGRICULTURE">AGRICULTURE</MenuItem>
-                  <MenuItem value="BUSINESS ANALYTICS">
-                    BUSINESS ANALYTICS
-                  </MenuItem>
-                  <MenuItem value="BUSINESS ADMINISTRATION">
-                    BUSINESS ADMINISTRATION
-                  </MenuItem>
-                  <MenuItem value="ENVINORMENTAL ENGINEERING">
-                    ENVINORMENTAL ENGINEERING
-                  </MenuItem>
-                  <MenuItem value="MANAGEMENT INFORMATION SYSTEMS">
-                    MANAGEMENT INFORMATION SYSTEMS{" "}
-                  </MenuItem>
-                  <MenuItem value="PHARMACEUTICS">PHARMACEUTICS</MenuItem>
-                  <MenuItem value="REGULATORY AFFAIRS">
-                    REGULATORY AFFAIRS
-                  </MenuItem>
-                  {/* <MenuItem value="">OTHERS</MenuItem> */}
-                </Field>
+                <>
+                  <h4>Choose desired {form.picked} course</h4>
+                  <Field
+                    component={Select}
+                    disabled={false}
+                    //formControl={{ FormControl }}
+                    formHelperText={{
+                      children: "Please select your desired Course",
+                    }}
+                    id="age"
+                    name="Degreecourse"
+                    labelId="age-simple"
+                    label="Course"
+                    //   variant="standard"
+                    onChange={(e) => {
+                      handleChange2(e, setFieldValue, submitForm);
+                    }}
+                    // onChange={e => {
+                    //    // e.persist();
+                    //     setFieldValue('value', e.target.value, false); // last argument prevents validation from running
+                    //     submitForm();
+                    //   }}
+                    //onChange={() => HandleChange(isValid,dirty)}
+                  >
+                    {/* <MenuItem value="">Select</MenuItem> */}
+                    <MenuItem value="COMPUTER SCIENCE">
+                      COMPUTER SCIENCE
+                    </MenuItem>
+                    <MenuItem value="DATA SCIENCE">DATA SCIENCE</MenuItem>
+                    <MenuItem value="CYBER SECURITY">CYBER SECURITY</MenuItem>
+                    <MenuItem value="SOFTWARE ENGINEERING">
+                      SOFTWARE ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="ARTIFICIAL INTEELIGENCE">
+                      ARTIFICIAL INTEELIGENCE
+                    </MenuItem>
+                    <MenuItem value="INFORMATION SYSTEMS">
+                      INFORMATION SYSTEMS
+                    </MenuItem>
+                    <MenuItem value="COMPUTER ENGINEERING">
+                      COMPUTER ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="ELECTRICAL ENGINEERING">
+                      ELECTRICAL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="MECHANICAL ENGINEERING">
+                      MECHANICAL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="INDUSTRIAL ENGINEERING">
+                      INDUSTRIAL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="ENGINEERING MANAGEMENT">
+                      ENGINEERING MANAGEMENT
+                    </MenuItem>
+                    <MenuItem value="CIVIL ENGINEERING">
+                      CIVIL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="CONSTRUCTION MANAGEMENT">
+                      CONSTRUCTION MANAGEMENT
+                    </MenuItem>
+                    <MenuItem value="BIOMEDICAL ENGINEERING">
+                      BIOMEDICAL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="HEALTH INFORMATICS/ PUBLIC HEALTH">
+                      HEALTH INFORMATICS/ PUBLIC HEALTH
+                    </MenuItem>
+                    <MenuItem value="AGRICULTURE">AGRICULTURE</MenuItem>
+                    <MenuItem value="BUSINESS ANALYTICS">
+                      BUSINESS ANALYTICS
+                    </MenuItem>
+                    <MenuItem value="BUSINESS ADMINISTRATION">
+                      BUSINESS ADMINISTRATION
+                    </MenuItem>
+                    <MenuItem value="ENVINORMENTAL ENGINEERING">
+                      ENVINORMENTAL ENGINEERING
+                    </MenuItem>
+                    <MenuItem value="MANAGEMENT INFORMATION SYSTEMS">
+                      MANAGEMENT INFORMATION SYSTEMS{" "}
+                    </MenuItem>
+                    <MenuItem value="PHARMACEUTICS">PHARMACEUTICS</MenuItem>
+                    <MenuItem value="REGULATORY AFFAIRS">
+                      REGULATORY AFFAIRS
+                    </MenuItem>
+                    {/* <MenuItem value="">OTHERS</MenuItem> */}
+                  </Field>
+                </>
               )}
 
               {/* <Button variant="contained" type="submit">
